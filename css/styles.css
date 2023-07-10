@@ -94,3 +94,25 @@ time {
   color: #fff;
   font-family: "Work Sans", sans-serif;
 }
+.footer{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  font-family: "Oswald", sans-serif;
+}
+@media (max-widht:960px){
+
+#header-content{
+  flex-direction: column;
+}
+
+.gallery{
+  flex-direction: column;
+  margin-top: 60px;
+}
+.gallery li{
+  width: 100%;
+  justify-content: center;
+}
+}  /*css querys*/
