@@ -81,10 +81,9 @@ time {
   color: #1a5b5d;
 }
 .gallery li .box .button {
-  
   margin-top: 5px;
   padding: 7px;
-    width: 100%;
+  width: 100%;
   border: none;
   background: #15402d;
   border-radius: 20px;
@@ -94,25 +93,29 @@ time {
   color: #fff;
   font-family: "Work Sans", sans-serif;
 }
-.footer{
+.footer {
   display: flex;
   justify-content: center;
   font-weight: bold;
   font-size: 1.25rem;
   font-family: "Oswald", sans-serif;
 }
-@media (max-widht:960px){
-
-#header-content{
+@media (max-widht: 960px) {
+}
+#header-content {
   flex-direction: column;
 }
 
-.gallery{
+.gallery {
   flex-direction: column;
   margin-top: 60px;
 }
-.gallery li{
+.gallery li {
   width: 100%;
   justify-content: center;
+} /*css querys*/
+svg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
-}  /*css querys*/
