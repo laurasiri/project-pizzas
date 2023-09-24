@@ -25,7 +25,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($row == 0) {
   ?>
   <div class="alert alert-danger">
-    <a href="login.html" class="close" data-dismiss="alert">Login Invalido</a>
+    <a href="login.html" class="close" data-dismiss="alert">x</a>
     <div class="text-center">
       <h5><strong>¡Error!</strong> Login Invalido.</h5>
     </div>
