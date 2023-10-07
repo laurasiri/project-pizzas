@@ -100,114 +100,44 @@
     <div class="main-content">
       <h2>NUESTRAS PIZZAS</h2>
       <ul class="gallery">
-        <li>
-          <div class="box">
-            <figure>
-              <img src="img/fugazzeta_cleanup.jpg" alt="Fugazzeta" />
-              <figcaption>
+      <?php
+      include_once("config_products.php");
+
+      try{
+        $pdo = new PDO("mysql:host=".SERVER_NAME.";dbname=".DATABASE_NAME,USER_NAME,PASSWORD);
+        // set the PDO error mode to exception
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //echo "Conexion exitosa ";
+        }
+        catch(PDOException $e) {
+            echo "Conexion fallida: " . $e->getMessage();
+        }
+      $sql="select p.product_name, p.image, p.price, date_format(p.start_date,'%d/%m/%Y') as date, c.category_name from products p inner join categories c on c.id_category=p.id_category order by p.price  asc";
+      $stmt=$pdo->prepare($sql);
+      $stmt->execute();
+      $data=$stmt->fetchAll();
+      foreach($data as $row)
+      {
+      ?>
+      <li>
+        <div class="box">
+          <figure>
+            <img src="<?php echo $row['image']?>">
+              <figcaption> 
+                             
                 <h3>Fugazzeta</h3>
                 <p>$1600</p>
-                <time> 05/07/2023 </time>
-                <button value="1" class="button">
-                  Añadir al Carrito<i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </figcaption>
-            </figure>
-          </div>
-        </li>
-        <li>
-          <div class="box">
-            <figure>
-              <img src="img/pizza-4-quesos.jpg" alt="4 Quesos" />
-              <figcaption>
-                <h3> 4 Quesos</h3>
-                <p>$2300</p>
-                <time>05/07/2023</time>
-                <button value="2" class="button">
-                  Añadir al Carrito<i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </figcaption>
-            </figure>
-          </div>
-        </li>
-        <li>
-          <div class="box">
-            <figure>
-              <img src="img/pizza-de-albahaca.jpg" alt="Albahaca" />
-              <figcaption>
-                <h3>Albahaca</h3>
-                <p>$1700</p>
-                <time>05/07/2023</time>
-                <button value="3" class="button">
-                  Añadir al Carrito<i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </figcaption>
-            </figure>
-          </div>
-        </li>
-        <li>
-          <div class="box">
-            <figure>
-              <img src="img/pizza-muzzarella.jpg" alt="Muzzarella" />
-              <figcaption>
-                <h3>Muzzarella</h3>
-                <p>$1700</p>
-                <time>05/07/2023</time>
-                <button value="4" class="button">
-                  Añadir al Carrito<i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </figcaption>
-            </figure>
-          </div>
-        </li>
-        <li>
-          <div class="box">
-            <figure>
-              <img src="img/pizza-napolitana.jpg" alt="Napolitana" />
-              <figcaption>
-                <h3> Napolitana</h3>
-                <p>$1900</p>
-                <time>05/07/2023</time>
-                <button value="5" class="button">
-                  Añadir al Carrito<i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </figcaption>
-            </figure>
-          </div>
-        </li>
-        <li>
-          <div class="box">
-            <figure>
-              <img
-                src="img/pizza-rucula-y-jamon-crudo.jpg"
-                alt="Rúcula y Jamon Crudo"
-              />
-              <figcaption>
-                <h3> Rúcula y Jamon Crudo</h3>
-                <p>$2500</p>
-                <time>05/07/2023</time>
-                <button value="6" class="button">
-                  Añadir al Carrito<i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </figcaption>
-            </figure>
-          </div>
-        </li>
-        <li>
-          <div class="box">
-            <figure>
-              <img src="img/jamon-y-morrones.jpg" alt="Jamon y Morrones" />
-              <figcaption>
-                <h3>jamon y Morrones</h3>
-                <p>$3400</p>
-                <time>10/07/2023</time>
-               <br/> <button value="7" class="button">
-                  Añadir al Carrito<i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </figcaption>
-            </figure>
-          </div>
-        </li>
+              <time>05/07/2023</time>
+              <br /><button class="button" value="1">
+                Agregar al carrito <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+      <?php
+      }
+      ?>
       </ul>
     </div>
 
