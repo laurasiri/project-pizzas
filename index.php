@@ -88,13 +88,13 @@
           </g>
         </svg>
         <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="nosotros.html">Nosotros </a></li>
-            <li><a href="surcusales.html">Surcusales</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-        </nav>
+            <ul>
+              <li><a href="">home</a></li>
+              <li><a href="nosotros.html">nosotros</a></li>
+              <li><a href="sucursales.html">sucursales</a></li>
+              <li><a href="contacto.html">contacto</a></li>
+            </ul>
+          </nav>
       </div>
     </header>
     <div class="main-content">
@@ -123,8 +123,7 @@
         <div class="box">
           <figure>
             <img src="<?php echo $row['image']?>">
-              <figcaption> 
-                             
+              <figcaption>                
                 <h3>Fugazzeta</h3>
                 <p>$1600</p>
               <time>05/07/2023</time>
@@ -140,9 +139,11 @@
       ?>
       </ul>
     </div>
+    <footer>
+        <a href="login.html">login</a>
+        <p>&copy;2023</p>
+      </footer>
 
-    <a href="login.html">Area Privada</a>
-    <footer><p>&copy; 2023</p></footer>
 
     <script src="js/main.js"></script>
   </body>
