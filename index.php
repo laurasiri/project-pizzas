@@ -124,9 +124,10 @@
           <figure>
             <img src="<?php echo $row['image']?>">
               <figcaption>                
-                <h3>Fugazzeta</h3>
-                <p>$1600</p>
-              <time>05/07/2023</time>
+              <h3><?php echo $row['category_name']." ".$row['product_name']?> </h3>
+             <p><?php echo "$" . " " . $row['price'] ?></p>
+              <time><?php echo $row['date'] ?></time>
+
               <br /><button class="button" value="1">
                 Agregar al carrito <i class="fa-solid fa-cart-shopping"></i>
               </button>
